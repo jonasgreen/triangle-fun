@@ -21,6 +21,8 @@
 ; util functions
 ;----------------
 
-(defn compare-by-xy [p1 p2]
+(defn compare-by-xy
+  "Comparator used to sort points by firstly x and secondly y"
+  [p1 p2]
   (compare [(x p1) (y p1)]
            [(x p2) (y p2)]))

@@ -45,11 +45,21 @@
                            :lines [l]}))))
 
 (defn group-lines
+  "Takes a sequence of lines and returns them grouped by length.
+  An optional accuracy-margin can be given to make lines group more easily.
+
+  ex of returned data structure created with accuracy-margin of 5 and three lines.
+  [{:lines [l1 l2]
+    :d-min 100
+    :d-max 110}
+    {:lines [l3]
+    :d-min 177
+    :d-max 187}]"
   ([lines]
    (group-lines 0 lines))
 
-  ([margin lines]
-   (reduce (fn [g l] (add-line-to-group margin g l)) [] lines)))
+  ([accuracy-margin lines]
+   (reduce (fn [g l] (add-line-to-group accuracy-margin g l)) [] lines)))
 
 (defn slope
   ([l]

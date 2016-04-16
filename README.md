@@ -1,1 +1,1 @@
-# triangle-fun
+# triangle-fun in clojure-script with svg.
